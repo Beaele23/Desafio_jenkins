@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Instalar dependencias') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('Construir imagen Docker') {
             steps {
-                sh 'docker build -t sistema-integracion .'
+                bat 'docker build -t sistema-integracion .'
             }
         }
     }
