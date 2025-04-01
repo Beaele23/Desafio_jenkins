@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('Clonar repositorio') {
             steps {
-         
                 checkout scm
             }
         }
@@ -12,11 +11,11 @@ pipeline {
                 sh 'npm install'
             }
         }
-        
-        }
         stage('Construir imagen Docker') {
             steps {
                 sh 'docker build -t sistema-integracion .'
             }
         }
     }
+}
+
